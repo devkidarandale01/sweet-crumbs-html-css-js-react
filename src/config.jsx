@@ -1,6 +1,3 @@
-
-
-
 import Cake1 from "../../assets/cake1.jpg";
 import Cake2 from "../../assets/cake2.jpg";
 import Cake3 from "../../assets/cake3.jpg";
