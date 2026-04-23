@@ -9,6 +9,9 @@ function Navbar({ active }) {
         <House className="menu-icon" /> Home
       </Link>
 
+      <Link to="/about" className={`menu-item ${active === "about" ? "active-menu" : ""}`}>
+        <FileUser className="menu-icon" /> About
+      </Link>
 
       <Link to="/gallery" className={`menu-item ${active === "gallery" ? "active-menu" : ""}`}>
         <Cake className="menu-icon" /> CakeGallery
@@ -19,7 +22,7 @@ function Navbar({ active }) {
       </Link>
 
    <Link to="/ourservice" className={`menu-item ${active === "ourservice" ? "active-menu" : ""}`}>
-        <HeartHandshake className="menu-icon" /> OurService
+  
       </Link>
       <Link to="/contact" className={`menu-item ${active === "contact" ? "active-menu" : ""}`}>
         <Phone className="menu-icon" /> Contact
