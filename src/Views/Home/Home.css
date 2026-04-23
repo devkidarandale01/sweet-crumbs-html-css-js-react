@@ -46,7 +46,10 @@ background: linear-gradient(135deg, #fff8f0 0%, #fef2e4 100%);
 
 }
 
-
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(108, 72, 49, 0.25);
+  border-color: #d4a574;
 }
 
 .card-image {

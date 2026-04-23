@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  
+  background-color:  #f1f8ed;
 }
 
 .cake-card {
@@ -51,6 +51,10 @@
 .gallery button:hover {
   background-color: #ff69b4;   
   color: white;
+}
+
+.gallery{
+color: #494949;
 }
 
 .search {
