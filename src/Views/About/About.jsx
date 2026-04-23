@@ -20,11 +20,7 @@ const AboutData = [
     title: "🍞 Our Mission",
     description: "Our mission is to bring warm, delicious bakery flavors to your table."
   },
-  {
-    id: 4,
-    title: "🚚 Fast Delivery",
-    description: "We ensure quick and safe delivery so your fresh bakery items arrive on time."
-  }
+  
 ];
 
 function About() {
