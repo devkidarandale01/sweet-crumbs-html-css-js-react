@@ -90,7 +90,7 @@ function About() {
   },
   {
     id: 3,
-    name: "Sneha",
+    name: "Reva",
     text: "Loved the pastries. Highly recommended!",
   },
 ];
