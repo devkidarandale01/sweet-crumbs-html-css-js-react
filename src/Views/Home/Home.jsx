@@ -1,7 +1,10 @@
+import Navbar from "./../../components/Navbar/Navbar";
+import Footer from "./../../components/Footer/Footer";
+import "./Home.css";
+import BodyContainer from "../../components/BodyContainer/BodyContainer";
 
 
 
-import Cake1 from "../../assets/cake1.webp";
 import Cake2 from "../../assets/cake2.webp";
 import Cake3 from "../../assets/cake3.webp";
 import Cake4 from "../../assets/cake4.webp";
