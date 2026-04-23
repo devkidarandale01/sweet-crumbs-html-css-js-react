@@ -5,7 +5,14 @@
   font-family: Arial, sans-serif;
 }
 
-
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  gap: 25px;
+}
 
 
 .footer-section {
@@ -64,7 +71,3 @@
   font-size: 14px;
 }
 
-.menu-subitem{
-    text-decoration: none;
-    color: black;
-}
