@@ -19,7 +19,7 @@ import cake12 from "../../assets/gallery12.webp";
 
 const cakesData = [
   { id: 1, name: "Fruit Cream Cake", price: "₹500", desc: "Fresh fruit topped soft cake", rating: 4, bestseller: true, img: cake1 },
-  { id: 2, name: "Heart Shape Cake", price: "₹600", desc: "Beautiful heart design cream cake", rating: 5, img: cake2 },
+  { id: 2, name: "Vanilla cream cake", price: "₹600", desc: "Vanilla cream cake", rating: 5, img: cake2 },
   { id: 3, name: "Chocolate Jar", price: "₹550", desc: "Layered chocolate dessert jar", rating: 4, bestseller: true, img: cake3 },
   { id: 4, name: "Chocolate Pastry + Coffee", price: "₹700", desc: "  Rich chocolate pastry served with hot coffee .", rating: 3, img: cake4 },
   { id: 5, name: "Cupcake", price: "₹400", desc: "Soft cupcake with cream topping", rating: 4, img: cake5 },
@@ -52,7 +52,7 @@ function CakeGallery() {
       <Navbar active="gallery" />
 
       <div className="gallery">
-       <center><h1>Search Your Cravings Here🍰!</h1></center>
+       <center><h1><i>Search Your Cravings Here!</i></h1></center>
      
 <center><input
           type="text"
