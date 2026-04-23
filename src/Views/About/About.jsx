@@ -51,6 +51,10 @@ function About() {
       url: "src/assets/gallery5.webp",
       title: "Creamy Cupcakes"
     },
+    {
+      url: "src/assets/gallery17.jpg",
+      title: "Sweet Dounts"
+    },
     
   ];
 
