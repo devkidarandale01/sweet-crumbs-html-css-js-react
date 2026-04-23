@@ -1,3 +1,7 @@
+.cakegallery {
+  background-color:  #fff8f0;
+}
+
 .cake-container {
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +60,7 @@
 }
 
 .gallery{
-color: #616161;
+color: #b5582d;
 font-size: small;
 }
 
