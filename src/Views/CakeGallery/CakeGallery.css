@@ -3,7 +3,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  
+  background-color:  #f1f8ed;
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 
 .cake-card {
@@ -53,6 +55,10 @@
   color: white;
 }
 
+.gallery{
+color: #616161;
+font-size: small;
+}
 
 .search {
   padding: 10px;
