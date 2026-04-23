@@ -52,7 +52,7 @@ function CakeGallery() {
       <Navbar active="gallery" />
 
       <div className="gallery">
-       <center><h1>Sweet Cravings 🍰</h1></center>
+       <center><h1><i>Search your caravings here!!</i></h1></center>
      
 <center><input
           type="text"
@@ -82,7 +82,7 @@ function CakeGallery() {
                 className="fav-btn"
                 onClick={() => toggleFav(cake.id)}
               >
-                {favorites.includes(cake.id) ? "❤️ " : "🤍 "}
+                {favorites.includes(cake.id) ? "♥️ " : " ♡"}
               </span>
 
               <button onClick={() => navigate("/order")}>
