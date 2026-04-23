@@ -25,7 +25,15 @@ background: linear-gradient(135deg, #fff8f0 0%, #fef2e4 100%);
   line-height: 1.6;
 }
 
-
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #f1f8ed;
+}
 
 .product-card {
   background: linear-gradient(135deg, #fff5eb 0%, #fef2e4 100%);
@@ -34,6 +42,8 @@ background: linear-gradient(135deg, #fff8f0 0%, #fef2e4 100%);
   box-shadow: 0 10px 30px rgba(108, 72, 49, 0.15);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 300px;
+
 }
 
 .product-card:hover {
@@ -82,8 +92,6 @@ background: linear-gradient(135deg, #fff8f0 0%, #fef2e4 100%);
     font-size: 2.5rem;
   }
 
-  .product-card {
-    max-width: 100%;
-  }
-}
+
+
 
