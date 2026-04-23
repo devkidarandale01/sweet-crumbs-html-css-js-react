@@ -11,7 +11,7 @@ import Cake4 from "../../assets/cake4.webp";
 import Cake5 from "../../assets/cake5.webp";
 import Cake6 from "../../assets/cake6.webp";
 import Cake7 from "../../assets/cake7.webp";
-import Cake8 from "../../assets/cake8.webp";
+
 
 const Products = [
   {
