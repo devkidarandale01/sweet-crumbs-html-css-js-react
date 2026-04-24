@@ -33,12 +33,11 @@
   font-size: 16px;
 }
 
-/* remove line */
 .footer-section h3::after {
   display: none;
 }
 
-/* ---------- QUICK LINKS ---------- */
+
 
 .quick-links a {
   display: block;
@@ -47,7 +46,7 @@
   margin: 6px 0;
 }
 
-/* dot ONLY for quick links */
+
 .quick-links a::before {
   content: "• ";
   color: black;
@@ -58,7 +57,6 @@
   color: #6B4F3B;
 }
 
-/* ---------- CONTACT (NO DOT) ---------- */
 
 .footer-section p a {
   text-decoration: none;
@@ -70,7 +68,7 @@
   color: #6B4F3B;
 }
 
-/* ---------- FEATURES ---------- */
+
 
 .footer-section ul {
   padding-left: 18px;
@@ -81,7 +79,6 @@
   color: #333;
 }
 
-/* ---------- TEXT ---------- */
 
 .footer-section p {
   margin: 6px 0;
@@ -103,12 +100,14 @@
 }
 .quick-links {
   list-style: disc;
-  padding-left: 18px;
+  padding-left: 12px;
   margin: 0;
+  text-align: left;
 }
 
 .quick-links li {
   margin: 6px 0;
+  list-style-position: inside;
 }
 
 .quick-links a {
