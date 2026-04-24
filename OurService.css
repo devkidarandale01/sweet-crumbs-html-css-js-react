@@ -1,0 +1,112 @@
+.ourservice {
+  background-color: #fff8f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  margin-top: 30px;
+  color: #b5582d;
+  font-size: 2.5rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.service-subtitle {
+  color: #6c4a36;
+  max-width: 720px;
+  margin: 10px auto 30px;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.service-card {
+  background: linear-gradient(135deg, #fff5eb 0%, #fef2e4 100%);
+  padding: 32px 24px;
+  border-radius: 20px;
+  border: 2px solid #f2d3b6;
+  box-shadow: 0 8px 25px rgba(108, 72, 49, 0.15);
+  color: #5d4435;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(108, 72, 49, 0.25);
+  border-color: #d4a574;
+}
+
+.service-icon {
+  margin-bottom: 20px;
+  color: #8a4a2c;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: #b5582d;
+}
+
+.service-card h3 {
+  margin-top: 0;
+  color: #8a4a2c;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #b5582d;
+}
+
+.service-card p {
+  line-height: 1.7;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-title {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 24px 20px;
+  }
+}
