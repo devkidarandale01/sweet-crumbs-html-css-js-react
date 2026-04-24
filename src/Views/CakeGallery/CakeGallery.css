@@ -38,9 +38,7 @@
   transition: 0.25s;
 }
 
-.cake-card:hover img {
-  transform: scale(1.03);  
-}
+
 
 .gallery button {
   margin-top: 10px;
