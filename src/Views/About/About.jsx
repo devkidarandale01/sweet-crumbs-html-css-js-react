@@ -25,75 +25,34 @@ const AboutData = [
     title: "🚚 Fast Delivery",
     description: "We ensure quick and safe delivery so your fresh bakery items arrive on time."
   }
-  
 ];
 
 function About() {
 
   const IMAGES = [
-    {
-      url: "src/assets/cake4.webp",
-      title: "Delicious Cake"
-    },
-    {
-      url: "src/assets/cake6.webp",
-      title: "Fresh Pastry"
-    },
-    {
-      url: "src/assets/gallery9.webp",
-      title: "Tasty Cookies"
-    },
-    {
-      url: "src/assets/gallery8.webp",
-      title: "Soft Bread"
-    },
-    {
-      url: "src/assets/gallery5.webp",
-      title: "Creamy Cupcakes"
-    },
-    {
-      url: "src/assets/gallery17.jpg",
-      title: "Sweet Dounts"
-    },
-    
+    { url: "src/assets/cake4.webp", title: "Delicious Cake" },
+    { url: "src/assets/cake6.webp", title: "Fresh Pastry" },
+    { url: "src/assets/gallery9.webp", title: "Tasty Cookies" },
+    { url: "src/assets/gallery8.webp", title: "Soft Bread" },
+    { url: "src/assets/gallery5.webp", title: "Creamy Cupcakes" },
+    { url: "src/assets/cake7.webp", title: "Beverage" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slideLeft = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(IMAGES.length - 1);
-    }
+    setCurrentIndex(currentIndex === 0 ? IMAGES.length - 1 : currentIndex - 1);
   };
 
   const slideRight = () => {
-    if (currentIndex < IMAGES.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
+    setCurrentIndex(currentIndex === IMAGES.length - 1 ? 0 : currentIndex + 1);
   };
-  
 
   const reviews = [
-  {
-    id: 1,
-    name: "Priya",
-    text: "Best cakes ever! Fresh and delicious 😍",
-  },
-  {
-    id: 2,
-    name: "Rahul",
-    text: "Amazing service and fast delivery!",
-  },
-  {
-    id: 3,
-    name: "Reva",
-    text: "Loved the pastries. Highly recommended!",
-  },
-];
+    { id: 1, name: "Priya", text: "Best cakes ever! Fresh and delicious 😍" },
+    { id: 2, name: "Rahul", text: "Amazing service and fast delivery!" },
+    { id: 3, name: "Reva", text: "Loved the pastries. Highly recommended!" }
+  ];
 
   return (
     <div className="about">
@@ -101,6 +60,7 @@ function About() {
 
       <BodyContainer>
         <h1 className="about-title">About Bakery Shop</h1>
+
         <p className="about-subtitle">
           <i>A warm bakery creating cakes, pastries and bread for every celebration.</i>
         </p>
@@ -115,9 +75,7 @@ function About() {
         </div>
 
         <div className="gallery-container">
-          <span className="btn-slide" onClick={slideLeft}>
-            &lt;
-          </span>
+          <span className="btn-slide" onClick={slideLeft}>&lt;</span>
 
           <img
             src={IMAGES[currentIndex].url}
@@ -125,9 +83,7 @@ function About() {
             alt="gallery"
           />
 
-          <span className="btn-slide" onClick={slideRight}>
-            &gt;
-          </span>
+          <span className="btn-slide" onClick={slideRight}>&gt;</span>
         </div>
 
         <h3 className="gallery-title">
@@ -156,17 +112,17 @@ function About() {
         </div>
 
         <div className="reviews-section">
-  <h2>Customer Reviews</h2>
+          <h2>Customer Reviews</h2>
 
-  <div className="reviews-container">
-    {reviews.map((review) => (
-      <div key={review.id} className="review-card">
-        <p className="review-text">"{review.text}"</p>
-        <h4 className="review-name">- {review.name}</h4>
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="reviews-container">
+            {reviews.map((review) => (
+              <div key={review.id} className="review-card">
+                <p className="review-text">"{review.text}"</p>
+                <h4 className="review-name">- {review.name}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </BodyContainer>
 
@@ -174,7 +130,5 @@ function About() {
     </div>
   );
 }
-
-
 
 export default About;

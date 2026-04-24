@@ -8,7 +8,7 @@
 
 .about-title {
   text-align: center;
-  color: black;
+  color: #b5582d;
   margin-bottom: 5px;
 }
 
@@ -16,13 +16,6 @@
   text-align: center;
   color: #555;
   margin-bottom: 20px;
-}
-
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
 }
 
 .about-hero {
@@ -36,17 +29,23 @@
   line-height: 1.8;
 }
 
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .about-card {
   width: 250px;
   background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
   border-radius: 15px;
   padding: 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 20px 0;
   text-align: center;
   border: 2px solid #f2d3b6;
   box-shadow: 0 8px 20px rgba(108, 72, 49, 0.15);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -58,7 +57,12 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -73,44 +77,45 @@
 }
 
 .about-card h3 {
- 
   margin-bottom: 10px;
 }
 
 .gallery-container {
-  width: fit-content;
+  width: 100%;
   margin: 20px auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .main-image {
-  height: 300px;
-  width: 350px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
 .btn-slide {
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
 .btn-slide:hover {
-  background-color: pink;
+  background-color: #d4a574;
   color: white;
 }
 
 .gallery-preview {
   display: flex;
-  justify-content: center;   
-  flex-wrap: wrap;          
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
-  width: 100%;               
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -118,7 +123,6 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  margin: 5px;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
@@ -126,10 +130,12 @@
 
 .preview-img:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 .gallery-title {
   text-align: center;
+  margin-top: 10px;
 }
 
 .reviews-section {
@@ -150,7 +156,7 @@
   padding: 15px;
   border-radius: 10px;
   background-color: #fff3e6;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .review-text {
@@ -160,4 +166,20 @@
 .review-name {
   margin-top: 10px;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    width: 90%;
+  }
+
+  .btn-slide {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  .preview-img {
+    width: 60px;
+    height: 60px;
+  }
 }
