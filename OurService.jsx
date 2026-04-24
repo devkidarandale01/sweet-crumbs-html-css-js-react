@@ -71,7 +71,8 @@ function OurService() {
           
           <div className="service-card">
             <div className="service-icon">
-              <Calendar size={48} />
+                            <Calendar size={48} />
+
             </div>
                     <h3>Monthly Cake Subscription</h3>
                  <p>
