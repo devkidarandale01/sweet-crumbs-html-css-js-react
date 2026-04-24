@@ -73,8 +73,8 @@ function OurService() {
             <div className="service-icon">
               <Calendar size={48} />
             </div>
-            <h3>Monthly Cake Subscription</h3>
-            <p>
+                    <h3>Monthly Cake Subscription</h3>
+                 <p>
               Get fresh cakes delivered every month. Enjoy delicious treats regularly without ordering again.
             </p>
           </div>
