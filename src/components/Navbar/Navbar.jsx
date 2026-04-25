@@ -8,13 +8,12 @@ function Navbar({ active }) {
     <div className="navbar">
 
     
-      <div className="nav-left">
-        <img src={logo} alt="logo" className="nav-logo" />
-        <h2 className="nav-title">Sweet Crumbs</h2>
-      </div>
+    z
 
   
-      
+      <Link to="/" className={`menu-item ${active === "home" ? "active-menu" : ""}`}>
+        <House className="menu-icon" /> Home
+      </Link>
 
       <Link to="/about" className={`menu-item ${active === "about" ? "active-menu" : ""}`}>
         <FileUser className="menu-icon" /> About
