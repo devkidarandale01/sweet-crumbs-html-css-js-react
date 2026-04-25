@@ -1,4 +1,6 @@
-
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { House, FileUser, Phone, HeartHandshake, Cake, ListOrdered } from "lucide-react";
 import logo from "../../assets/logo.jpg";
 
 function Navbar({ active }) {
@@ -11,10 +13,8 @@ function Navbar({ active }) {
         <h2 className="nav-title">Sweet Crumbs</h2>
       </div>
 
-      {/* MENU ITEMS */}
-      <Link to="/" className={`menu-item ${active === "home" ? "active-menu" : ""}`}>
-        <House className="menu-icon" /> Home
-      </Link>
+  
+      
 
       <Link to="/about" className={`menu-item ${active === "about" ? "active-menu" : ""}`}>
         <FileUser className="menu-icon" /> About
