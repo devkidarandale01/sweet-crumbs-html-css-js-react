@@ -29,14 +29,7 @@ function Footer() {
 
                 <div className="footer-col">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/Cakegallery">CakeGallery</a></li>
-                        <li><a href="/order">Order</a></li>
-                        <li><a href="/ourservice">OurService</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
+                   
                 </div>
 
                 <div className="footer-col">
