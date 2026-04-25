@@ -1,10 +1,19 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { House, FileUser, Phone, HeartHandshake, Cake, ListOrdered } from "lucide-react";
+import logo from "../../assets/logo.jpg";
 
 function Navbar({ active }) {
   return (
     <div className="navbar">
+
+    
+      <div className="nav-left">
+        <img src={logo} alt="logo" className="nav-logo" />
+        <h2 className="nav-title">Sweet Crumbs</h2>
+      </div>
+
+  
       <Link to="/" className={`menu-item ${active === "home" ? "active-menu" : ""}`}>
         <House className="menu-icon" /> Home
       </Link>
@@ -21,13 +30,14 @@ function Navbar({ active }) {
         <ListOrdered className="menu-icon" /> Order
       </Link>
 
-   <Link to="/ourservice" className={`menu-item ${active === "ourservice" ? "active-menu" : ""}`}>
+      <Link to="/ourservice" className={`menu-item ${active === "ourservice" ? "active-menu" : ""}`}>
         <HeartHandshake className="menu-icon" /> OurService
       </Link>
       
       <Link to="/contact" className={`menu-item ${active === "contact" ? "active-menu" : ""}`}>
         <Phone className="menu-icon" /> Contact
       </Link>
+
     </div>
   );
 }
