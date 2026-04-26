@@ -88,7 +88,8 @@ function OurService() {
             </div>
             <h3>Personalized Message Cards</h3>
             <p>
-              Add your personal message with every order to make your gift more special and memorable.
+                            Add your personal message with every order to make your gift more special and memorable.
+
             </p>
           </div>
 

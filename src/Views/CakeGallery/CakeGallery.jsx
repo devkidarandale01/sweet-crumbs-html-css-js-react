@@ -85,7 +85,9 @@ function CakeGallery() {
                 {favorites.includes(cake.id) ? "♥️ " : " ♡"}
               </span>
 
-             
+              <button onClick={() => navigate("/order")}>
+                Order Now
+              </button>
 
             </div>
           ))}

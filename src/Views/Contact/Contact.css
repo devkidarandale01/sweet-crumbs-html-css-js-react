@@ -1,97 +1,154 @@
-﻿.contact {
-  background-color: #fff8f0;
+﻿/* Page Background */
+.contact {
+  background: linear-gradient(135deg, #fff8f0, #ffe8d6);
   color: #3f2a1d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Title */
 .contact-title {
   text-align: center;
   color: #b5582d;
-  margin-bottom: 8px;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
 }
 
+/* Subtitle */
 .contact-subtitle {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   color: #7a5a48;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
+/* Layout */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
-  padding: 0 12px;
+  gap: 30px;
+  padding: 10px;
 }
 
-.contact-card {
-  width: 320px;
-  background: linear-gradient(135deg, #fff5eb 0%, #fef2e4 100%);
-  padding: 24px;
-  border-radius: 18px;
-  border: 2px solid #f2d3b6;
-  box-shadow: 0 8px 18px rgba(108, 72, 49, 0.12);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+/* Cards (Glass Effect) */
+.contact-card,
+.contact-form-card {
+  width: 350px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 200, 150, 0.4);
+  box-shadow: 0 10px 30px rgba(108, 72, 49, 0.15);
+  transition: all 0.3s ease;
 }
 
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.5s;
-}
-
-.contact-card:hover::before {
-  left: 100%;
-}
-
-.contact-card:hover {
-  transform: translateY(-8px);
+/* Hover Animation */
+.contact-card:hover,
+.contact-form-card:hover {
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(108, 72, 49, 0.25);
-  border-color: #d4a574;
 }
 
-.contact-card h3 {
-  margin-top: 0;
+/* Contact Items */
+.contact-item {
+  margin-bottom: 18px;
+}
+
+.contact-item h3 {
+  margin-bottom: 4px;
   color: #8a4a2c;
 }
 
-.contact-card p {
+.contact-item p {
   color: #5d4435;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.input-box {
+/* Copy Button */
+.copy-btn {
+  margin-top: 6px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #d2691e, #ff9a3c);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.copy-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #a0522d, #ff7b00);
+}
+
+/* Form Inputs */
+.contact-form-card input,
+.contact-form-card textarea {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #d9b99b;
-  background: #fff8f2;
-  color: #4e3a2e;
+  border: 1px solid #e2c3a5;
+  background: #fffdfb;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.send-btn {
+/* Input Focus */
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  outline: none;
+  border-color: #d2691e;
+  box-shadow: 0 0 8px rgba(210, 105, 30, 0.3);
+}
+
+/* Button */
+.contact-form-card button {
   width: 100%;
   padding: 12px;
-  background-color: #ca7b41;
-  color: #fff;
+  margin-top: 10px;
   border: none;
   border-radius: 12px;
+  background: linear-gradient(135deg, #d2691e, #ff9a3c);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.contact-form-card button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a0522d, #ff7b00);
+}
+
+/* Messages */
+.success {
+  margin-top: 12px;
+  color: #2e7d32;
   font-weight: 600;
 }
 
-.send-btn:hover {
-  background-color: #ad6a38;
+.error {
+  margin-top: 12px;
+  color: #c62828;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-card,
+  .contact-form-card {
+    width: 100%;
+  }
 }
