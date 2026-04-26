@@ -1,13 +1,9 @@
+import React, { useState, useEffect } from "react";
 import "./Contact.css";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import BodyContainer from "../../components/BodyContainer/BodyContainer";
-
-import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import BodyContainer from "./BodyContainer";
-import Footer from "./Footer";
-import "./Contact.css";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -19,7 +15,7 @@ function Contact() {
   const [status, setStatus] = useState("");
   const [greeting, setGreeting] = useState("");
 
-  // Dynamic greeting using useEffect
+  // Dynamic greeting
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) setGreeting("Good Morning ☀️");
@@ -27,7 +23,6 @@ function Contact() {
     else setGreeting("Good Evening 🌙");
   }, []);
 
-  // Contact info (reusable object)
   const contactInfo = [
     { title: "Shop", value: "Bakery Shop" },
     { title: "Address", value: "123 Baker Street, Pune, Maharashtra" },
@@ -35,29 +30,29 @@ function Contact() {
     { title: "Email", value: "bakeryshop@gmail.com" },
     {
       title: "Best for",
-      value: "Custom cakes, party orders, fresh bakery boxes and same-day delivery.",
+      value:
+        "Custom cakes, party orders, fresh bakery boxes and same-day delivery.",
     },
     { title: "Opening Hours", value: "Mon-Sun: 8:00 AM – 8:00 PM" },
   ];
 
-  // Handle form input
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Validation
   const validate = () => {
     if (!form.name || !form.email || !form.message) {
       return "Please fill all fields!";
     }
+
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (!emailPattern.test(form.email)) {
       return "Invalid email format!";
     }
+
     return "";
   };
 
-  // Submit form
   const handleSubmit = (e) => {
     e.preventDefault();
     const error = validate();
@@ -70,7 +65,6 @@ function Contact() {
     }
   };
 
-  // Copy phone/email
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     setStatus("Copied to clipboard! 📋");
@@ -87,15 +81,13 @@ function Contact() {
         </p>
 
         <div className="contact-container">
-
-          {/* LEFT: Contact Info */}
+          {/* LEFT */}
           <div className="contact-card">
             {contactInfo.map((item, index) => (
               <div key={index} className="contact-item">
                 <h3>{item.title}</h3>
                 <p>{item.value}</p>
 
-                {/* Copy feature */}
                 {(item.title === "Phone" || item.title === "Email") && (
                   <button
                     className="copy-btn"
@@ -108,7 +100,7 @@ function Contact() {
             ))}
           </div>
 
-          {/* RIGHT: Contact Form */}
+          {/* RIGHT */}
           <div className="contact-form-card">
             <h2>Send us a Message 💌</h2>
 
@@ -140,7 +132,6 @@ function Contact() {
               <button type="submit">Send Message</button>
             </form>
 
-            {/* Conditional rendering */}
             {status && (
               <p
                 className={
