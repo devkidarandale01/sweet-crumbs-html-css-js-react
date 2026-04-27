@@ -137,7 +137,7 @@ function Order() {
       <Navbar active="order" />
 
       <BodyContainer>
-        <h1 className="order-title">🍰 Your Order</h1>
+        <h1 className="order-title">Your Order</h1>
 
      
         <div className="cart">
