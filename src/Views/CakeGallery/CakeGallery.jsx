@@ -1,6 +1,6 @@
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./CakeGallery.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -60,36 +60,42 @@ function CakeGallery() {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // ✅ Pass item also through navigation
     navigate("/order", { state: { item: newItem } });
   };
 
   return (
-    <div>
+    <div className="cakegallery">
       <Navbar active="gallery" />
 
-      <div className="gallery">
-        <h1 style={{ textAlign: "center" }}>Search your cravings 🍰</h1>
+      <h1 style={{ textAlign: "center", marginTop: "20px" }}>
+        Search your cravings 🍰
+      </h1>
 
+      <div style={{ textAlign: "center" }}>
         <input
+          className="search"
           type="text"
-          placeholder="Search..."
+          placeholder="Search cakes..."
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
 
-        <div className="cake-container">
-          {filtered.map((cake) => (
-            <div key={cake.id} className="cake-card">
-              <img src={cake.img} alt={cake.name} />
-              <h3>{cake.name}</h3>
-              <p>₹{cake.price}</p>
+      <div className="cake-container">
+        {filtered.map((cake) => (
+          <div key={cake.id} className="cake-card">
 
-              <button onClick={() => handleOrderNow(cake)}>
-                Order Now
-              </button>
-            </div>
-          ))}
-        </div>
+            <img src={cake.img} alt={cake.name} />
+
+            <h3>{cake.name}</h3>
+
+            <p>₹{cake.price}</p>
+
+            <button onClick={() => handleOrderNow(cake)}>
+              Order Now
+            </button>
+
+          </div>
+        ))}
       </div>
 
       <Footer />

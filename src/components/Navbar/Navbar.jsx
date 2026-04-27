@@ -22,7 +22,7 @@ function Navbar({ active }) {
         <FileUser className="menu-icon" /> About
       </Link>
 
-      <Link to="/gallery" className={`menu-item ${active === "gallery" ? "active-menu" : ""}`}>
+      <Link to="/cakegallery" className={`menu-item ${active === "cakegallery" ? "active-menu" : ""}`}>
         <Cake className="menu-icon" /> CakeGallery
       </Link>
 
