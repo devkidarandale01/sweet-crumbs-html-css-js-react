@@ -15,19 +15,41 @@ function Contact() {
   const [status, setStatus] = useState("");
   const [greeting, setGreeting] = useState("");
 
-  // Dynamic greeting
+  // Load data from localStorage
   useEffect(() => {
+    const savedData = localStorage.getItem("contactForm");
+    if (savedData) {
+      setForm(JSON.parse(savedData));
+    }
+
     const hour = new Date().getHours();
     if (hour < 12) setGreeting("Good Morning ☀️");
     else if (hour < 18) setGreeting("Good Afternoon 🌤️");
     else setGreeting("Good Evening 🌙");
   }, []);
 
+  // Save data to localStorage
+  useEffect(() => {
+    localStorage.setItem("contactForm", JSON.stringify(form));
+  }, [form]);
+
   const contactInfo = [
-    { title: "Shop", value: "Bakery Shop" },
-    { title: "Address", value: "123 Baker Street, Pune, Maharashtra" },
-    { title: "Phone", value: "+91 98765 43210" },
-    { title: "Email", value: "bakeryshop@gmail.com" },
+    { title: "Shop", value: "Sweet Crumbs Bakery 🍰" },
+    {
+      title: "Address",
+      value:
+        "Sweet Crumbs Bakery, Shop No. 12, MG Road, Pimpri-Chinchwad, Pune, Maharashtra - 411017",
+    },
+    {
+      title: "Phone",
+      value: "7499637769",
+      link: "tel:7499637769",
+    },
+    {
+      title: "Email",
+      value: "sweetcrumbs@gmail.com",
+      link: "mailto:sweetcrumbs@gmail.com",
+    },
     {
       title: "Best for",
       value:
@@ -59,15 +81,15 @@ function Contact() {
 
     if (error) {
       setStatus(error);
+      alert(error); // alert message
     } else {
       setStatus("Message sent successfully! 🧁");
-      setForm({ name: "", email: "", message: "" });
-    }
-  };
+      alert("Thank you! Your message has been sent.");
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    setStatus("Copied to clipboard! 📋");
+      // Clear form + localStorage
+      setForm({ name: "", email: "", message: "" });
+      localStorage.removeItem("contactForm");
+    }
   };
 
   return (
@@ -75,7 +97,7 @@ function Contact() {
       <Navbar active="contact" />
 
       <BodyContainer>
-        <h1 className="contact-title">Contact Bakery Shop</h1>
+        <h1 className="contact-title">Contact Sweet Crumbs Bakery</h1>
         <p className="contact-subtitle">
           {greeting}! We bake fresh treats every day 🍰
         </p>
@@ -86,15 +108,15 @@ function Contact() {
             {contactInfo.map((item, index) => (
               <div key={index} className="contact-item">
                 <h3>{item.title}</h3>
-                <p>{item.value}</p>
 
-                {(item.title === "Phone" || item.title === "Email") && (
-                  <button
-                    className="copy-btn"
-                    onClick={() => copyToClipboard(item.value)}
-                  >
-                    Copy
-                  </button>
+                {item.link ? (
+                  <p>
+                    <a href={item.link} className="contact-link">
+                      {item.value}
+                    </a>
+                  </p>
+                ) : (
+                  <p>{item.value}</p>
                 )}
               </div>
             ))}

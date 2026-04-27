@@ -4,8 +4,9 @@ import Home from "./Views/Home/Home.jsx";
 import About from "./Views/About/About.jsx";
 import OurService from "./Views/OurService/OurService.jsx";
 import Contact from "./Views/Contact/Contact.jsx";
-import NotFound from "./Views/NotFound/NotFound.jsx";
 import CakeGallery from "./Views/CakeGallery/CakeGallery.jsx";
+import NotFound from "./Views/NotFound/NotFound.jsx";
+import Order from "./Views/Order/Order"; 
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/ourservice" element={<OurService />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<CakeGallery />} />
+        <Route path="/order" element={<Order />} /> 
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
