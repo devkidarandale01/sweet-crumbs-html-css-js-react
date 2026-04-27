@@ -15,7 +15,6 @@ function Contact() {
   const [status, setStatus] = useState("");
   const [greeting, setGreeting] = useState("");
 
-  // Load data from localStorage
   useEffect(() => {
     const savedData = localStorage.getItem("contactForm");
     if (savedData) {
@@ -28,13 +27,13 @@ function Contact() {
     else setGreeting("Good Evening 🌙");
   }, []);
 
-  // Save data to localStorage
+
   useEffect(() => {
     localStorage.setItem("contactForm", JSON.stringify(form));
   }, [form]);
 
   const contactInfo = [
-    { title: "Shop", value: "Sweet Crumbs Bakery 🍰" },
+    { title: "Shop", value: "Sweet Crumbs Bakery " },
     {
       title: "Address",
       value:
@@ -81,12 +80,12 @@ function Contact() {
 
     if (error) {
       setStatus(error);
-      alert(error); // alert message
+      alert(error); 
     } else {
       setStatus("Message sent successfully! 🧁");
       alert("Thank you! Your message has been sent.");
 
-      // Clear form + localStorage
+      
       setForm({ name: "", email: "", message: "" });
       localStorage.removeItem("contactForm");
     }
@@ -103,7 +102,7 @@ function Contact() {
         </p>
 
         <div className="contact-container">
-          {/* LEFT */}
+
           <div className="contact-card">
             {contactInfo.map((item, index) => (
               <div key={index} className="contact-item">
@@ -122,7 +121,7 @@ function Contact() {
             ))}
           </div>
 
-          {/* RIGHT */}
+      
           <div className="contact-form-card">
             <h2>Send us a Message 💌</h2>
 

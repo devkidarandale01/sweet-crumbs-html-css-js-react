@@ -1,4 +1,4 @@
-﻿/* Page Background */
+﻿
 .contact {
   background: linear-gradient(135deg, #fff8f0, #ffe8d6);
   color: #3f2a1d;
@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-/* Title */
+
 .contact-title {
   text-align: center;
   color: #b5582d;
@@ -16,7 +16,7 @@
   letter-spacing: 1px;
 }
 
-/* Subtitle */
+
 .contact-subtitle {
   text-align: center;
   margin-bottom: 35px;
@@ -24,7 +24,7 @@
   font-size: 1.05rem;
 }
 
-/* Layout */
+
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +33,7 @@
   padding: 10px;
 }
 
-/* Cards (Glass Effect) */
+
 .contact-card,
 .contact-form-card {
   width: 350px;
@@ -46,14 +46,14 @@
   transition: all 0.3s ease;
 }
 
-/* Hover Animation */
+
 .contact-card:hover,
 .contact-form-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(108, 72, 49, 0.25);
 }
 
-/* Contact Items */
+
 .contact-item {
   margin-bottom: 18px;
 }
@@ -68,7 +68,7 @@
   line-height: 1.5;
 }
 
-/* Copy Button */
+
 .copy-btn {
   margin-top: 6px;
   padding: 5px 10px;
@@ -86,7 +86,7 @@
   background: linear-gradient(135deg, #a0522d, #ff7b00);
 }
 
-/* Form Inputs */
+
 .contact-form-card input,
 .contact-form-card textarea {
   width: 100%;
@@ -99,7 +99,7 @@
   transition: all 0.3s ease;
 }
 
-/* Input Focus */
+
 .contact-form-card input:focus,
 .contact-form-card textarea:focus {
   outline: none;
@@ -107,7 +107,7 @@
   box-shadow: 0 0 8px rgba(210, 105, 30, 0.3);
 }
 
-/* Button */
+
 .contact-form-card button {
   width: 100%;
   padding: 12px;
@@ -122,13 +122,13 @@
   transition: all 0.3s ease;
 }
 
-/* Button Hover */
+
 .contact-form-card button:hover {
   transform: scale(1.05);
   background: linear-gradient(135deg, #a0522d, #ff7b00);
 }
 
-/* Messages */
+
 .success {
   margin-top: 12px;
   color: #2e7d32;
@@ -141,7 +141,7 @@
   font-weight: 600;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .contact-title {
     font-size: 2rem;
