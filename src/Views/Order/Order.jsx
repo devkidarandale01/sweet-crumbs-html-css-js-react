@@ -11,14 +11,14 @@ function Order() {
 
   const [cart, setCart] = useState([]);
 
-  // ✅ NEW FIELDS
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
   const [orderPlaced, setOrderPlaced] = useState(false);
 
-  // ✅ LOAD CART
+ 
   useEffect(() => {
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -39,17 +39,17 @@ function Order() {
     setCart(storedCart);
   }, [location.state]);
 
-  // ✅ SYNC CART
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // REMOVE
+
   const removeFromCart = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // UPDATE QTY
+
   const updateQty = (id, qty) => {
     const value = Number(qty);
     if (value <= 0) return;
@@ -61,13 +61,13 @@ function Order() {
     );
   };
 
-  // TOTAL
+
   const total = cart.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
   );
 
-  // ✅ PLACE ORDER (UPDATED)
+
   const placeOrder = () => {
     if (!name) return alert("Enter your name");
     if (!phone) return alert("Enter your contact number");
@@ -97,7 +97,7 @@ function Order() {
     setOrderPlaced(true);
   };
 
-  // ⭐ CUSTOM ORDER
+ 
   const [customOrder, setCustomOrder] = useState({
     customerName: "",
     phone: "",
@@ -139,7 +139,7 @@ function Order() {
       <BodyContainer>
         <h1 className="order-title">🍰 Your Order</h1>
 
-        {/* CART */}
+     
         <div className="cart">
           <h2>Your Cart 🛒</h2>
 
@@ -170,7 +170,7 @@ function Order() {
           <h3>Total: ₹{total}</h3>
         </div>
 
-        {/* ✅ ORDER FORM UPDATED */}
+   
         <div className="order-form">
           <h2>Delivery Details</h2>
 
@@ -201,7 +201,7 @@ function Order() {
           )}
         </div>
 
-        {/* CUSTOM ORDER */}
+      
         <div className="custom-order">
           <h2>🎂 Custom Cake Request</h2>
 

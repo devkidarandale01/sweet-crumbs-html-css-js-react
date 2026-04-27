@@ -61,7 +61,12 @@
 }
 
 
+@media (max-width: 768px) {
 
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
 
   .nav-left {
     position: static;

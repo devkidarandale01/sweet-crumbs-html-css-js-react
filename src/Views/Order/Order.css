@@ -1,11 +1,11 @@
-/* GLOBAL RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* BACKGROUND */
+
 .order {
   background: linear-gradient(135deg, #fff7f0, #ffe8d6);
   min-height: 100vh;
@@ -13,17 +13,83 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* TITLE */
+
 .order-title {
   text-align: center;
   font-size: 2.8rem;
   color: #b85c38;
   margin: 30px 0;
+  letter-spacing: 1px;
 }
 
-/* ===================== */
-/* CART */
-/* ===================== */
+
+
+.menu h2 {
+  text-align: center;
+  color: #8b4513;
+  margin-bottom: 20px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,183,77,0.15), transparent);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  color: #d2691e;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-weight: bold;
+  color: #5c3d2e;
+}
+
+
+.card button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(45deg, #ff7e5f, #ffb347);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
 
 .cart {
   margin-top: 40px;
@@ -54,10 +120,16 @@
   flex-wrap: wrap;
 }
 
+.cart-item:hover {
+  background: #ffe4c4;
+}
+
+
 .cart-item span:first-child {
   flex: 1;
   min-width: 150px;
 }
+
 
 .cart-item input {
   width: 60px;
@@ -66,6 +138,14 @@
   border: 1px solid #ccc;
   text-align: center;
 }
+
+
+.cart-item span:nth-child(3) {
+  min-width: 80px;
+  text-align: right;
+  font-weight: bold;
+}
+
 
 .cart-item button {
   background: #ff4d4d;
@@ -76,6 +156,11 @@
   cursor: pointer;
 }
 
+.cart-item button:hover {
+  background: #d93636;
+}
+
+
 .cart h3 {
   text-align: right;
   margin-top: 15px;
@@ -83,9 +168,7 @@
   font-size: 1.4rem;
 }
 
-/* ===================== */
-/* DELIVERY FORM (FIXED UI) */
-/* ===================== */
+
 
 .order-form {
   margin-top: 50px;
@@ -157,9 +240,6 @@
   transform: scale(1.05);
 }
 
-/* ===================== */
-/* CUSTOM ORDER */
-/* ===================== */
 
 .custom-order {
   margin-top: 60px;
@@ -209,9 +289,7 @@
   margin-top: 10px;
 }
 
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
+
 
 @media (max-width: 600px) {
   .form-grid {

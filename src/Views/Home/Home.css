@@ -153,3 +153,23 @@ background: linear-gradient(135deg, #fff8f0 0%, #fef2e4 100%);
   }
 }
 }
+
+@media (max-width: 500px) {
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+}
