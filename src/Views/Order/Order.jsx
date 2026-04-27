@@ -10,10 +10,15 @@ function Order() {
   const location = useLocation();
 
   const [cart, setCart] = useState([]);
+
+  // ✅ NEW FIELDS
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+
   const [orderPlaced, setOrderPlaced] = useState(false);
 
-  // ✅ LOAD CART + HANDLE NEW ITEM
+  // ✅ LOAD CART
   useEffect(() => {
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -34,7 +39,7 @@ function Order() {
     setCart(storedCart);
   }, [location.state]);
 
-  // ✅ SYNC
+  // ✅ SYNC CART
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -62,14 +67,33 @@ function Order() {
     0
   );
 
-  // ORDER
+  // ✅ PLACE ORDER (UPDATED)
   const placeOrder = () => {
     if (!name) return alert("Enter your name");
+    if (!phone) return alert("Enter your contact number");
+    if (!address) return alert("Enter your address");
     if (cart.length === 0) return alert("Cart is empty");
 
+    const orderData = {
+      name,
+      phone,
+      address,
+      cart,
+      total,
+      date: new Date().toLocaleString(),
+    };
+
+    localStorage.setItem("lastOrder", JSON.stringify(orderData));
+
     alert("Order placed successfully 🎉");
+
     setCart([]);
     localStorage.removeItem("cart");
+
+    setName("");
+    setPhone("");
+    setAddress("");
+
     setOrderPlaced(true);
   };
 
@@ -146,13 +170,28 @@ function Order() {
           <h3>Total: ₹{total}</h3>
         </div>
 
-        {/* ORDER FORM */}
+        {/* ✅ ORDER FORM UPDATED */}
         <div className="order-form">
+          <h2>Delivery Details</h2>
+
           <input
             type="text"
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+          />
+
+          <input
+            type="tel"
+            placeholder="Enter phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+
+          <textarea
+            placeholder="Enter delivery address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
 
           <button onClick={placeOrder}>Place Order</button>
@@ -208,3 +247,4 @@ function Order() {
 }
 
 export default Order;
+
